@@ -49,20 +49,20 @@
             </tr>
             </thead>
             <tbody th:each = "run : ${runs}">
-            <tr>
-                <td th:text="${run.id}">text</td>
-                <td th:text="${run.distance}">text</td>
-                <td th:text="${run.averagePace}">text</td>
-                <td th:text="${run.averageHeartRate}">text</td>
-                <td th:text="${run.createdAt}">text</td>
-                <td th:text="${run.updatedAt}">text</td>
-                <td>
-                    <form th:action="@{/runs/{id}(id=${run.id})}" method="post">
-                        <input type="hidden" name="_method" value="delete" />
-                        <button class="bg-red-300 hover:bg-red-400 rounded px-2" type="submit">DELETE</button>
-                    </form>
-                </td>
-            </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="py-2" th:text="${run.id}">text</td>
+                    <td th:text="${run.distance}">text</td>
+                    <td th:text="${run.averagePace}">text</td>
+                    <td th:text="${run.averageHeartRate}">text</td>
+                    <td th:text="${run.createdAt}">text</td>
+                    <td th:text="${run.updatedAt}">text</td>
+                    <td>
+                        <form th:action="@{/runs/{id}(id=${run.id})}" method="post">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button class="bg-red-300 hover:bg-red-400 rounded px-2" type="submit">DELETE</button>
+                        </form>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
