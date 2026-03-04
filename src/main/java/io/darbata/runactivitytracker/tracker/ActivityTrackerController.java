@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class TrackerController {
+public class ActivityTrackerController {
 
-    private final TrackerService service;
+    private final ActivityTrackerService service;
 
-    public TrackerController(TrackerService service) {
+    public ActivityTrackerController(ActivityTrackerService service) {
         this.service = service;
     }
 

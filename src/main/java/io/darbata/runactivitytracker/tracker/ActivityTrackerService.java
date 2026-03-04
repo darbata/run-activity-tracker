@@ -6,11 +6,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
-public class TrackerService {
+public class ActivityTrackerService {
 
     private final RunActivityRepository repository;
 
-    public TrackerService(RunActivityRepository repository) {
+    public ActivityTrackerService(RunActivityRepository repository) {
         this.repository = repository;
     }
 
