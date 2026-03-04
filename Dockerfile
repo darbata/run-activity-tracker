@@ -1,7 +1,8 @@
-FROM eclipse-temurin:21.0.10_7-jdk-ubi10-minimal
+FROM maven:4.0.0-rc-5-eclipse-temurin-21-noble AS builder
 WORKDIR /app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY src ./src
-CMD ["./mvnw", "spring-boot:run"]
+COPY . .
+RUN mvn clean package
+
+FROM gcr.io/distroless/java21-debian13
+COPY --from=builder /app/target/*.jar /usr/local/lib/app.jar
+ENTRYPOINT ["java", "-jar", "/usr/local/lib/app.jar"]
