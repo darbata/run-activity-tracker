@@ -8,6 +8,6 @@ This project was completed for a University task, for the purpose of understandi
 
 Source code can be found in `/src/main/java/io/darbata/runactivitytracker/`
 
-Dockerfile is present in the root directory.
+`Dockerfile` is present in the root directory, `/`.
 
-The corresponding image can be found at https://hub.docker.com/r/darbata1/activity-tracker-slim.
+The resulting Docker image can be found at https://hub.docker.com/r/darbata1/activity-tracker-slim.
